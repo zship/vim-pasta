@@ -34,8 +34,7 @@ function! s:VisualPasta()
   else
     " workaround strange Vim behavior (""p is no-op in visual mode)
     let reg = v:register == '"' ? '' : '"' . v:register
-
-    exe "normal! gv" . v:count1 . reg . "p"
+    exe "normal! gv" . v:count1 . reg . '"_dP'
   endif
 endfunction
 
